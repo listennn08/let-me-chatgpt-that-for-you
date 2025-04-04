@@ -1,26 +1,66 @@
 @import "tailwindcss";
 
+@import 'tailwindcss';
+
+@font-face {
+  font-family: 'OpenAI Sans';
+  src: url('https://cdn.openai.com/common/fonts/openai-sans/OpenAISans-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'OpenAI Sans';
+  src: url('https://cdn.openai.com/common/fonts/openai-sans/OpenAISans-Medium.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --header-h: 3.375rem;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
+@media (min-width: 48rem) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --header-h: 4.75rem;
   }
 }
 
+@font-face {
+  font-family: 'OpenAI Sans';
+  src: url('https://cdn.openai.com/common/fonts/openai-sans/OpenAISans-Semibold.woff2') format('woff2');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'OpenAI Sans', sans-serif;
+  @apply dark:bg-black dark:text-white bg-white text-black;
+}
+
+
+.pt-header-h {
+  padding-top: var(--header-h);
+}
+
+.text-chatgpt-title {
+  font-size: clamp(1.5rem, calc(1.5rem + .375*((100vw - 23.4375rem) / 66.5625)), 1.875rem);
+  line-height: clamp(1.98rem, calc(1.98rem + .495*((100vw - 23.4375rem) / 66.5625)), 2.475rem);
+  letter-spacing: 0;
+  font-weight: 600;
+  text-wrap: pretty;
+}
+
+.shadow-splash-chatpgpt-input {
+  --tw-shadow: 0 2px 5px 0 #0000000f, 0 4px 4px 0 #00000003;
+  --tw-shadow-colored: 0 2px 5px 0 var(--tw-shadow-color), 0 4px 4px 0 var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
+.text-p1, .text-p2 {
+  letter-spacing: -.01em;
+  font-weight: 400;
 }
