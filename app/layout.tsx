@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Suspense } from "react";
+import { Analytics } from "@vercel/analytics/react";
 import "./globals.css";
 
 
@@ -19,6 +20,7 @@ export default function RootLayout({
         <Suspense fallback={<div>Loading...</div>}>
           {children}
         </Suspense>
+        <Analytics />
       </body>
     </html>
   );
