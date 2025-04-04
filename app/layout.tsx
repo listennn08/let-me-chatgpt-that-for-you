@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Suspense } from "react";
 import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/react";
 import "./globals.css";
 
 
@@ -21,6 +22,7 @@ export default function RootLayout({
           {children}
         </Suspense>
         <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );
