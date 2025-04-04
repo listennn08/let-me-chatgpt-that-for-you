@@ -88,8 +88,6 @@ function Home() {
     input.select()
     input.setSelectionRange(0, input.value.length)
   }
-    
-  
 
   return (
     <div className="pt-header-h">
